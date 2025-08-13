@@ -135,5 +135,4 @@ Like & View → Interact with videos
 Search → Find videos quickly
 
 Admin → Manage content & users
-## 📂 File Structure Overview
 
