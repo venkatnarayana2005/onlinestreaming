@@ -1,0 +1,112 @@
+
+        * { padding: 0; margin: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
+            background-image: url('img/loginbg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        form {
+            width: 500px;
+            background-color: rgba(241, 239, 239, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+            text-align: center;
+        }
+        form h3 {
+            font-size: 30px;
+            font-weight: 500;
+            color: black;
+        }
+        .profile-pic-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 10px auto;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #30bb4c;
+            cursor: pointer;
+        }
+        .upload-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #0aa5e3;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+        }
+        input, select {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            border: none;
+            color: black;
+        }
+        input::placeholder { color: black; }
+        select {
+            appearance: none;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #0aa5e3;
+            color: #fff;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #0894c2;
+        }
+        #file-input {
+            display: none;
+        }
+        .signup-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: rgb(15, 15, 15);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .admin-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #0c0c0c;
+            color: #eaeff3;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .admin-button:hover { background-color: #101010; }

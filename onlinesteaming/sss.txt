@@ -1,0 +1,87 @@
+users :
+
+CREATE TABLE users (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    fullname VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    confirmpassword VARCHAR(255) NOT NULL,
+    number VARCHAR(20) NOT NULL,
+    gender ENUM('Male', 'Female', 'Other') NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    profile_pic VARCHAR(255) NOT NULL DEFAULT 'default.jpg',
+    PRIMARY KEY (id)
+);
+
+
+cartoon :
+
+CREATE TABLE cartoon (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    file_path VARCHAR(500) NOT NULL,
+    uploaded_by VARCHAR(255) NOT NULL,
+    upload_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    uploaded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    likes_count INT(11) DEFAULT 0,
+    PRIMARY KEY (id)
+);
+
+
+Gaming :
+
+CREATE TABLE gaming (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    uploaded_by VARCHAR(255) NOT NULL,
+    uploaded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    likes_count INT(11) DEFAULT 0,
+    PRIMARY KEY (id),
+    INDEX (uploaded_by) -- Adding index for faster lookups on uploaded_by
+);
+
+
+news :
+
+CREATE TABLE news (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    uploaded_by VARCHAR(255) NOT NULL,
+    uploaded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    likes_count INT(11) DEFAULT 0,
+    PRIMARY KEY (id),
+    INDEX (uploaded_by) -- Adding index for faster lookups on uploaded_by
+);
+
+
+Sports :
+
+CREATE TABLE sports (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    uploaded_by VARCHAR(255) NOT NULL,
+    uploaded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    likes_count INT(11) NULL DEFAULT 0,
+    PRIMARY KEY (id),
+    INDEX (uploaded_by) -- Index for faster lookups on uploaded_by
+);
+
+
+Videos :
+
+CREATE TABLE videos (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    file_path VARCHAR(255) NOT NULL,
+    uploaded_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    uploaded_by VARCHAR(255) NULL,
+    likes_count INT(11) NULL DEFAULT 0,
+    PRIMARY KEY (id),
+    INDEX (uploaded_by) -- Index for optimized lookups
+);
+

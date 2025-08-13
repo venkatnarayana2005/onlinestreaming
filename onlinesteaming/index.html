@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Streaming App</title>
+</head>
+<body>
+    <h1>Video Streaming Application</h1>
+
+    <!-- Video player -->
+    <h2>Stream a Video</h2>
+    <video id="videoPlayer" controls width="600">
+        <source id="videoSource" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Upload a New Video</h2>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data" action="upload.php">
+        <input type="file" name="video" accept="video/*" required />
+        <button type="submit">Upload Video</button>
+    </form>
+
+    <h2>Available Videos</h2>
+    <div id="videoList"></div>
+
+    <script>
+        // Fetch and display video list
+        fetch('videos.php')
+            .then(response => response.json())
+            .then(data => {
+                const videoList = document.getElementById('videoList');
+                data.forEach(video => {
+                    const videoElement = document.createElement('div');
+                    const videoTitle = document.createElement('h3');
+                    videoTitle.textContent = video.title;
+                    const videoLink = document.createElement('button');
+                    videoLink.textContent = 'Watch';
+                    videoLink.onclick = () => playVideo(video.url);
+                    videoElement.appendChild(videoTitle);
+                    videoElement.appendChild(videoLink);
+                    videoList.appendChild(videoElement);
+                });
+            });
+
+        // Play selected video
+        function playVideo(url) {
+            document.getElementById('videoSource').src = url;
+            document.getElementById('videoPlayer').load();
+            document.getElementById('videoPlayer').play();
+        }
+    </script>
+</body>
+</html>
